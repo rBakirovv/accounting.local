@@ -1,0 +1,1 @@
+[GH Pages](https://rbakirovv.github.io/accounting.local/)
