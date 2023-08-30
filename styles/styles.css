@@ -25,7 +25,7 @@
 .underline_turquoise::after {
   content: "";
   position: absolute;
-  border: solid 3px #00ADB5;
+  border-top: solid 3px #00ADB5;
   border-color: #00ADB5 transparent transparent transparent;
 }
 
