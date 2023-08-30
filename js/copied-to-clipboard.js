@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   coordinatesElementsCopy.forEach((coordinatesCopy) => {
     coordinatesCopy.addEventListener("click", () => {
-      navigator.clipboard.writeText(coordinatesCopy.querySelector(".copied-to-clipboard"))
+      navigator.clipboard.writeText(coordinatesCopy.querySelector(".copied-to-clipboard").textContent)
         .then(() => {
           coordinatesCopy.querySelector('.coordinates__copy-text').textContent = 'Скопировано в буфер обмена';
         })

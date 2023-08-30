@@ -262,6 +262,10 @@ a {
   border-width: 9px;
 }
 
+.coordinates-copy:hover .coordinates__copy-tooltip {
+  opacity: 1;
+}
+
 .coordinates__copy-text {
   display: inline-block;
   font-family: 'Tilda Sans VF';
