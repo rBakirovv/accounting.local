@@ -9,6 +9,8 @@
   <!-- Стили -->
   <link rel="stylesheet" href="./styles/normalize.css">
   <link rel="stylesheet" href="./styles/styles.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -65,13 +67,41 @@
         </div>
       </div>
     </section>
-
-    <style>
-      main {
-        height: 10000px;
-      }
-    </style>
-
+    <section class="specialists">
+      <div class="specialists__container">
+        <h2 class="section-title section-title_centered">Специалисты</h2>
+        <div class="specialists__slider-container">
+          <ul class="specialists__slider swiper-wrapper">
+            <li class="specialists__slide specialist__card swiper-slide">
+              <img class="specialist__card-image" src="./images/specialist-1.png" alt="">
+              <div class="specialist__card-text-container">
+                <div class="specialist__card-job-title">Специализация</div>
+                <p>Константинов Константин Иванович</p>
+                <span>1 предложение — основная компетенция</span>
+              </div>
+            </li>
+            <li class="specialists__slide specialist__card swiper-slide">
+              <img class="specialist__card-image" src="./images/specialist-2.png" alt="">
+              <div class="specialist__card-text-container">
+                <div class="specialist__card-job-title">Специализация</div>
+                <p>Константинов Константин Иванович</p>
+                <span>1 предложение — основная компетенция</span>
+              </div>
+            </li>
+            <li class="specialists__slide specialist__card swiper-slide">
+              <img class="specialist__card-image" src="./images/specialist-3.png" alt="">
+              <div class="specialist__card-text-container">
+                <div class="specialist__card-job-title">Специализация</div>
+                <p>Константинов Константин Иванович</p>
+                <span>1 предложение — основная компетенция</span>
+              </div>
+            </li>
+          </ul>
+          <div class="slider-pagination slider-pagination_active-orange specialists-pagination"></div>
+        </div>
+      </div>
+      <div class="clip-item"></div>
+    </section>
   </main>
   <div class="mobile-menu">
     <div class="mobile-menu__container">
@@ -136,9 +166,13 @@
     </div>
   </div>
   <div class="menu-overlay"></div>
+  <!-- Слайдер -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- Cкрипты -->
   <script src="./js/header.js"></script>
   <script src="./js/burger.js"></script>
   <script src="./js/copied-to-clipboard.js"></script>
+  <script src="./js/specialists-slider.js"></script>
 </body>
 
 </html>

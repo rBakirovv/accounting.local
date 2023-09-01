@@ -180,6 +180,27 @@
   }
 }
 
+/* title */
+
+.section-title {
+  font-family: 'Tilda Sans VF';
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  color: #171717;
+  margin: 0;
+}
+
+.section-title_centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.section-title_white {
+  color: #FFF;
+}
+
 /* communications-container */
 
 .communications-container {
@@ -315,6 +336,42 @@ a {
   .menu-overlay.--active {
     display: block;
   }
+}
+
+/* clip */
+
+.clip-item {
+  position: absolute;
+  width: 77px;
+  height: 78px;
+  background-image: url(../images/clip.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* slider-pagination */
+
+.slider-pagination {
+  position: absolute !important;
+  z-index: 5 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  max-width: 80% !important;
+  width: max-content !important;
+}
+
+.slider-pagination .swiper-pagination-bullet {
+  border-radius: 2px !important;
+  transform: rotate(45deg) translateY(-2px) !important;
+}
+
+.slider-pagination_active-orange .swiper-pagination-bullet {
+  background: #000 !important;
+}
+
+.slider-pagination_active-orange .swiper-pagination-bullet-active {
+  background: #F50 !important;
 }
 
 /* header */
@@ -739,5 +796,107 @@ a {
     font-weight: 400;
     transform: none;
     margin-top: 15px;
+  }
+}
+
+/* specialists */
+
+.specialists {
+  position: relative;
+  background-color: #FFF5F3;
+}
+
+.specialists__container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 120px 0;
+}
+
+.specialists__slider-container {
+  position: relative;
+  max-width: 1060px;
+  overflow: hidden;
+  margin: 30px auto 0;
+}
+
+.specialists__slider {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.specialist__card {
+  display: flex;
+  flex-direction: column;
+  width: 338px !important;
+}
+
+.specialist__card-image {
+  width: 100%;
+  border-radius: 35px;
+}
+
+.specialist__card-text-container {
+  margin-top: 15px;
+}
+
+.specialist__card-job-title {
+  display: inline-block;
+  font-family: 'Tilda Sans VF';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  color: #014541;
+}
+
+.specialist__card-text-container p {
+  font-family: 'Tilda Sans VF';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 145%;
+  color: #171717;
+  margin: 5px 0 0;
+}
+
+.specialist__card-text-container span {
+  display: inline-block;
+  font-family: 'Tilda Sans VF';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 122%;
+  color: #363636;
+  margin: 5px 0 0;
+}
+
+.specialists .clip-item {
+  left: 100px;
+  bottom: -20px;
+}
+
+.specialists-pagination {
+  display: none !important;
+}
+
+@media screen and (max-width: 1360px) {
+  .specialists__container {
+    padding: 40px 0;
+  }
+
+  .specialists .clip-item {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .specialists__slider-container {
+    padding-bottom: 40px;
+  }
+
+  .specialists-pagination {
+    display: flex !important;
+    bottom: 0 !important;
   }
 }
