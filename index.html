@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./styles/styles.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 </head>
 
 <body>
@@ -102,6 +103,94 @@
       </div>
       <div class="clip-item"></div>
     </section>
+    <section class="technologies">
+      <div class="technologies__container">
+        <h2 class="section-title section-title_white section-title_centered">Технологии</h2>
+        <div class="technologies__cards-container">
+          <div class="technologies-card">
+            <img class="technologies-card__image" src="./images/technologies-1.svg" alt="">
+            <div class="technologies-card__text-container">
+              <p>Предоставим 1С</p>
+              <span>Лицензионная 1С со всеми обновлениями на нашем облачном сервере в солидном дата центре</span>
+            </div>
+          </div>
+          <div class="technologies-card">
+            <img class="technologies-card__image" src="./images/technologies-2.svg" alt="">
+            <div class="technologies-card__text-container">
+              <p>Все конфигурации</p>
+              <span>Подключение любой конфигурации 1С: Проф, Комплексная, УНФ и отраслевые</span>
+            </div>
+          </div>
+          <div class="technologies-card">
+            <img class="technologies-card__image" src="./images/technologies-3.svg" alt="">
+            <div class="technologies-card__text-container">
+              <p>Как вам удобно</p>
+              <span>Первичка и общение с нашим главбухом по почте, телефону, Zoom, WhatsApp, Telegram и Viber</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="clients">
+      <div class="clients__container">
+        <h2 class="section-title section-title_centered">Клиенты</h2>
+        <div class="clients__cards-container">
+          <a class="client-card" href="#">
+            <img class="client-card__image" src="./images/dantistoff.svg" alt="">
+          </a>
+          <a class="client-card" href="#">
+            <img class="client-card__image" src="./images/zubr.png" alt="">
+          </a>
+          <a class="client-card" href="#">
+            <img class="client-card__image" src="./images/levin.png" alt="">
+          </a>
+          <a class="client-card" href="#">
+            <img class="client-card__image" src="./images/premolar.png" alt="">
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="reviews">
+      <div class="reviews__container">
+        <h2 class="section-title section-title_white section-title_centered">Отзывы</h2>
+        <div class="reviews__main-container">
+          <div class="reviews__slider-container">
+            <ul class="reviews__slider swiper-wrapper">
+              <li class="reviews__slide swiper-slide">
+                <!-- Ссылка на изображение -->
+                <a class="reviews-card" href="./images/reviews-card.png" data-fancybox="reviews-gallery">
+                  <!-- Миниатюра -->
+                  <img class="reviews-card__image" src="./images/reviews-card.png" alt="">
+                  <div class="orange-eye"></div>
+                </a>
+              </li>
+              <li class="reviews__slide swiper-slide">
+                <!-- Ссылка на изображение -->
+                <a class="reviews-card" href="./images/reviews-card.png" data-fancybox="reviews-gallery">
+                  <!-- Миниатюра -->
+                  <img class="reviews-card__image" src="./images/reviews-card.png" alt="">
+                  <div class="orange-eye"></div>
+                </a>
+              </li>
+              <li class="reviews__slide swiper-slide">
+                <!-- Ссылка на изображение -->
+                <a class="reviews-card" href="./images/reviews-card.png" data-fancybox="reviews-gallery">
+                  <!-- Миниатюра -->
+                  <img class="reviews-card__image" src="./images/reviews-card.png" alt="">
+                  <div class="orange-eye"></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="slider-nav">
+            <button class="slider-btn slider-btn-next slider-btn_beige reviews-slider-next"></button>
+            <button class="slider-btn slider-btn-prev slider-btn_beige reviews-slider-prev"></button>
+          </div>
+          <div class="slider-pagination slider-pagination_active-beige reviews-pagination"></div>
+        </div>
+      </div>
+      <div class="clip-item"></div>
+    </section>
   </main>
   <div class="mobile-menu">
     <div class="mobile-menu__container">
@@ -168,11 +257,15 @@
   <div class="menu-overlay"></div>
   <!-- Слайдер -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- Лайтбокс -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <!-- Cкрипты -->
   <script src="./js/header.js"></script>
   <script src="./js/burger.js"></script>
   <script src="./js/copied-to-clipboard.js"></script>
   <script src="./js/specialists-slider.js"></script>
+  <script src="./js/reviews-slider.js"></script>
+  <script src="./js/lightbox.js"></script>
 </body>
 
 </html>
