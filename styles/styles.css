@@ -1041,14 +1041,14 @@
 .technologies__cards-container {
   display: grid;
   grid-template-columns: repeat(3, 329px);
-  gap: 33px;
+  gap: 45px 33px;
+  margin-top: 30px;
 }
 
 .technologies-card {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin-top: 30px;
 }
 
 .technologies-card__text-container p {
@@ -1088,6 +1088,10 @@
     justify-content: center;
     grid-template-columns: repeat(2, 329px);
   }
+
+  .technologies__cards-container {
+    gap: 30px;
+  }
 }
 
 @media screen and (max-width: 660px) {
@@ -1096,7 +1100,7 @@
   }
 
   .technologies__cards-container {
-    gap: 10px;
+    gap: 20px;
     grid-template-columns: repeat(1, 329px);
   }
 }
