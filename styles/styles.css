@@ -232,7 +232,7 @@
 }
 
 .communications-container p,
-a {
+.communications-container a {
   display: block;
   font-family: 'Tilda Sans VF';
   font-size: 18px;
@@ -243,9 +243,59 @@ a {
   margin: 0;
 }
 
+
+/* copy-tooltip */
+
+.copy-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: 160%;
+  transform: translateX(-50%);
+  height: 28px;
+  pointer-events: none;
+  background-color: #000;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.copy-tooltip:before {
+  content: "";
+  border: solid transparent;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: #000;
+  border-width: 9px;
+}
+
+.copy-text {
+  display: inline-block;
+  font-family: 'Tilda Sans VF';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  white-space: nowrap;
+  color: #F50 !important;
+  padding: 5px 10px 1px;
+}
+
+.mail-copy {
+  position: relative;
+  width: max-content;
+  cursor: pointer;
+}
+
+.mail-copy:hover .copy-tooltip {
+  opacity: 1;
+}
+
 /* coordinates */
 
 .coordinates {
+  display: inline-block;
   position: relative;
   font-family: 'Tilda Sans VF';
   font-size: 14px;
@@ -263,44 +313,12 @@ a {
   border-bottom: 1px solid #F50;
 }
 
-.coordinates__copy-tooltip {
-  position: absolute;
-  left: 50%;
-  bottom: 160%;
-  transform: translateX(-50%);
-  height: 28px;
-  pointer-events: none;
-  background-color: #000;
-  border-radius: 10px;
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
+.coordinates-copy {
+  cursor: pointer;
 }
 
-.coordinates__copy-tooltip:before {
-  content: "";
-  border: solid transparent;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-top-color: #000;
-  border-width: 9px;
-}
-
-.coordinates-copy:hover .coordinates__copy-tooltip {
+.coordinates-copy:hover .copy-tooltip {
   opacity: 1;
-}
-
-.coordinates__copy-text {
-  display: inline-block;
-  font-family: 'Tilda Sans VF';
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-  white-space: nowrap;
-  color: #F50;
-  padding: 5px 10px 1px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -858,7 +876,7 @@ a {
 }
 
 .mobile-menu .communications-container p,
-a {
+.mobile-menu .communications-container a {
   color: #FFF;
 }
 
@@ -1222,6 +1240,7 @@ a {
 }
 
 .reviews-card {
+  display: block;
   position: relative;
   width: 100%;
   height: 100%;
@@ -1276,5 +1295,201 @@ a {
 @media screen and (max-width: 1060px) {
   .reviews__slide .orange-eye {
     opacity: 1;
+  }
+}
+
+/* map */
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 860px;
+  margin-top: -20px;
+}
+
+.map-panel__container {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 180px;
+  transform: translateX(-50%);
+  max-width: 1060px;
+  width: 100%;
+}
+
+.map-panel__panel-container {
+  display: block;
+  background-color: #FFF;
+  border-radius: 25px;
+  width: 490px;
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+}
+
+.map-panel__line {
+  width: 100%;
+  height: 1px;
+  background-color: #FFF5F3;
+  margin: 20px 0;
+}
+
+.map-panel__panel-container .communications-container span {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  color: #6B6B6B;
+}
+
+.map-panel__panel-container .communications-container p,
+.map-panel__panel-container .communications-container a {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 135%;
+  color: #171717;
+}
+
+.map-panel__panel-container .communications-container__metro {
+  align-items: center;
+}
+
+.map-panel__button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.map-panel__coordinates-container {
+  margin-top: 10px;
+}
+
+.map-panel__panel-container .mail-copy {
+  display: block;
+  font-family: 'Tilda Sans VF';
+  font-size: 26px;
+  line-height: 135%;
+  font-weight: 400;
+  text-decoration: none;
+  color: #171717;
+  margin: 0;
+}
+
+.map-panel__panel-container .mail-copy .copy-tooltip {
+  bottom: 120%;
+}
+
+@media screen and (max-width: 1060px) {
+  .map {
+    height: 1100px;
+  }
+
+  .map-panel__container {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: none;
+    width: max-content;
+    bottom: 100px;
+  }
+
+  .map-panel__panel-container .communications-container span {
+    text-align: center;
+  }
+
+  .map-panel__panel-container .communications-container p,
+  .map-panel__panel-container .communications-container a {
+    text-align: center;
+  }
+
+  .map-panel__coordinates-container {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .map-panel__panel-container .mail-copy {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .map-panel__panel-container .communications-container__metro {
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .map-panel__container {
+    width: calc(100% - 40px);
+    bottom: 150px;
+  }
+
+  .map-panel__panel-container {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .map-panel__panel-container .communications-container p,
+  .map-panel__panel-container .communications-container a {
+    font-size: 22px;
+    line-height: 135%;
+  }
+
+  .map-panel__line {
+    margin: 10px 0;
+  }
+
+  .ymaps-2-1-79-map {
+    pointer-events: none;
+  }
+}
+
+/* footer */
+
+.footer {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  max-width: 1060px;
+  width: 100%;
+  border-radius: 25px;
+  background: #453431;
+  padding: 18px 40px;
+}
+
+.footer__rating {
+  font-family: 'Tilda Sans VF';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+  color: #fff;
+  margin: 0;
+}
+
+@media screen and (max-width: 1060px) {
+  .footer {
+    width: calc(100% - 40px);
+    max-width: none;
+    padding: 10px 20px;
+  }
+
+  .footer__rating {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer__rating {
+    text-align: center;
   }
 }

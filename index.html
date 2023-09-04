@@ -191,6 +191,63 @@
       </div>
       <div class="clip-item"></div>
     </section>
+    <section id="map" class="map">
+      <div class="map-panel__container">
+        <div class="map-panel__panel-container">
+          <div class="communications-container">
+            <span>Компания на станции</span>
+            <p><strong>Проспект Мира</strong></p>
+          </div>
+          <div class="map-panel__line"></div>
+          <div class="communications-container">
+            <span>Адрес</span>
+            <p>г. Москва, Хорошевское шоссе, д.17</p>
+          </div>
+          <div class="map-panel__coordinates-container">
+            <!--
+            <a class="coordinates" href="#">Схема проезда</a>
+            -->
+            <div class="coordinates coordinates-copy">
+              Координаты <span class="copied-to-clipboard">55.732120.37.588526</span>
+              <div class="copy-tooltip">
+                <span class="copy-text">Скопировать координаты</span>
+              </div>
+            </div>
+          </div>
+          <div class="map-panel__line"></div>
+          <div class="communications-container">
+            <span>Бесплатная консультация!</span>
+            <a href="tel:+74956350912">+7 (495) 635-09-12</a>
+          </div>
+          <div class="map-panel__line"></div>
+          <div class="communications-container">
+            <span>E-mail</span>
+            <div class="mail-copy">info@konsaltingmail.ru
+              <div class="copy-tooltip">
+                <span class="copy-text">Скопировать e-mail</span>
+              </div>
+            </div>
+          </div>
+          <div class="map-panel__line"></div>
+          <div class="communications-container">
+            <span>Станция метро</span>
+            <div class="communications-container__metro">
+              <div class="metro-icon metro-icon_purple"></div>
+              <p>Полежаевская</p>
+            </div>
+          </div>
+          <button class="main-button orange-button map-panel__button">Заказать звонок</button>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="logo">
+          <div class="logo-image"></div>
+          <p><span class="logo-text-first">Элитар</span><span class="logo-text-last"><span
+                class="logo-text-dash">-</span>Консалтинг</span></p>
+        </div>
+        <p class="footer__rating">Компания c 20+ летней практикой из ТОП-100 федерального рейтинга</p>
+      </div>
+    </section>
   </main>
   <div class="mobile-menu">
     <div class="mobile-menu__container">
@@ -232,8 +289,8 @@
       <a class="coordinates" href="#">Схема проезда</a>
       <div class="coordinates coordinates-copy">
         Координаты <span class="copied-to-clipboard">55.732120.37.588526</span>
-        <div class="coordinates__copy-tooltip">
-          <span class="coordinates__copy-text">Скопировать координаты</span>
+        <div class="copy-tooltip">
+          <span class="copy-text">Скопировать координаты</span>
         </div>
       </div>
       <div class="communications-container">
@@ -259,6 +316,9 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <!-- Лайтбокс -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <!-- Карты -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=c9ed032f-0f47-41ae-8390-9122eafcd244&amp;lang=ru_RU"
+    type="text/javascript"></script>
   <!-- Cкрипты -->
   <script src="./js/header.js"></script>
   <script src="./js/burger.js"></script>
@@ -266,6 +326,7 @@
   <script src="./js/specialists-slider.js"></script>
   <script src="./js/reviews-slider.js"></script>
   <script src="./js/lightbox.js"></script>
+  <script src="./js/map.js"></script>
 </body>
 
 </html>
