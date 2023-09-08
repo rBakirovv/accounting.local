@@ -7,6 +7,8 @@ window.addEventListener("DOMContentLoaded", function () {
   const mobileMenu = document.querySelector(".mobile-menu");
   const menuOverlay = document.querySelector(".menu-overlay");
 
+  const menuLinks = mobileMenu.querySelectorAll(".nav-link");
+
   function openMenu() {
     html.style.overflow = "hidden";
 
@@ -27,5 +29,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
   mobileMenuClose && mobileMenuClose.addEventListener("click", () => {
     closeMenu();
+  })
+
+  menuLinks.forEach((element) => {
+    element.addEventListener("click", closeMenu)
   })
 })

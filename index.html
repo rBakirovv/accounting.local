@@ -24,19 +24,19 @@
       </div>
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link" href="#">Начало</a>
+          <a class="nav-link" href="#quote">Начало</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Цены</a>
+          <a class="nav-link" href="#rates">Цены</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Решим проблемы</a>
+          <a class="nav-link" href="#rates-included">Решим проблемы</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">О компании</a>
+          <a class="nav-link" href="#specialists">О компании</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Контакты</a>
+          <a class="nav-link" href="#map">Контакты</a>
         </li>
       </ul>
       <a class="phone" href="tel:+74956350912">+7 (495) 635-09-12</a>
@@ -63,12 +63,276 @@
           </span>
         </div>
         <div class="stb__buttons-container">
-          <button class="main-button orange-button">Перезвоните мне</button>
-          <button class="main-button white-button">Записаться</button>
+          <a class="main-button orange-button" href="#">Перезвоните мне</a>
+          <a class="main-button white-button" href="#">Записаться</a>
         </div>
       </div>
     </section>
-    <section class="specialists">
+    <section id="quote" class="quote">
+      <div class="quote__container">
+        <div class="quote__quotes-item"></div>
+        <p class="quote__quote-text">Не обязательно чистить все зубы ограничьтесь теми, которые вы хотите оставить</p>
+        <div class="statistics__container">
+          <div class="statistics__text">
+            <p>50</p>
+            <span>клиентов</span>
+          </div>
+          <div class="statistics__dot"></div>
+          <div class="statistics__text">
+            <p>19 820 290 ₽</p>
+            <span>сэкономили клиентам</span>
+          </div>
+          <div class="statistics__dot"></div>
+          <div class="statistics__text">
+            <p>12+</p>
+            <span>лет опыта</span>
+          </div>
+        </div>
+        <a class="big-video video-progress" href="/doctor-video.mp4" data-fancybox="big-video">
+          <video class="big-video__video" autoplay="" muted="" playsinline="" loop="">
+            <source src="https://dantistoff.ru/lp/video/shatilova.mp4" type="video/mp4">
+          </video>
+          <div class="watch-video">
+            <div class="watch-video__icon"></div>
+            <span>Смотреть видео</span>
+          </div>
+          <span class="watch-video__comment">Хватиков В.А.
+            Коммерческий директор
+          </span>
+          <progress class="video-progress-line" max="100" value="0">Progress</progress>
+          <div class="clip-item"></div>
+        </a>
+      </div>
+    </section>
+    <section id="profit" class="profit">
+      <div class="profit__container">
+        <h2 class="section-title section-title_white section-title_centered">Профит от специализации</h2>
+        <div class="profit__cards-container">
+          <div class="profit__card">
+            <img class="profit__card-image" src="./images/profit-card.svg" alt="">
+            <p>Работаем индивидуально</p>
+            <span>
+              Занимаемся только стоматологией, поэтому есть время и желание услышать <strong>Ваши пожелания</strong> и
+              поделиться
+              собственным опытом, знаниями и наработками
+            </span>
+          </div>
+          <div class="profit__card">
+            <img class="profit__card-image" src="./images/profit-card.svg" alt="">
+            <p>Снижаем риски</p>
+            <span>
+              Поможем <strong>избежать 99% возможных проблем</strong> — у нас высокий уровень насмотренности, опыт чужих
+              и собственных
+              ошибок и глубокое понимание процессов в стоматологии
+            </span>
+          </div>
+          <div class="profit__card">
+            <img class="profit__card-image" src="./images/profit-card.svg" alt="">
+            <p>Экономим время</p>
+            <span>
+              Принимаем дела быстро, даже если бухгалтер пропал, а документы сгорели. <strong>Не задаем лишние
+                вопросы</strong>, точно
+              знаем как должно быть и просто приводим бухгалтерию к идеалу
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="rates" class="rates">
+      <div class="rates__container">
+        <h2 class="section-title section-title_white section-title_centered section-title_stroke-orange">Тарифы</h2>
+        <p class="rates__subtitle"><strong>Не ограничиваем</strong> количество платёжек, документов, консультаций</p>
+        <div class="rates__cards-container">
+          <a href="#" class="rates-card">
+            <div class="rates-card__image-container">
+              <img class="rates-card__image" src="./images/rate.svg" alt="">
+              <span>х2</span>
+            </div>
+            <div class="rates-card__chairs-container">
+              <p>2 кресла</p>
+            </div>
+            <div class="rates-card__line"></div>
+            <div class="rates-card__price-container">
+              <span>6% УСН</span>
+              <p>18 000 ₽</p>
+            </div>
+            <div class="rates-card__dot"></div>
+            <div class="rates-card__price-container">
+              <span>15% УСН</span>
+              <p>24 000 ₽</p>
+            </div>
+            <div class="main-button orange-button rates-card__button">Подробнее</div>
+          </a>
+          <a href="#" class="rates-card">
+            <div class="rates-card__image-container">
+              <img class="rates-card__image" src="./images/rate.svg" alt="">
+              <span>х3</span>
+            </div>
+            <div class="rates-card__chairs-container">
+              <p>3 кресла</p>
+            </div>
+            <div class="rates-card__line"></div>
+            <div class="rates-card__price-container">
+              <span>6% УСН</span>
+              <p>18 000 ₽</p>
+            </div>
+            <div class="rates-card__dot"></div>
+            <div class="rates-card__price-container">
+              <span>15% УСН</span>
+              <p>24 000 ₽</p>
+            </div>
+            <div class="main-button orange-button rates-card__button">Подробнее</div>
+          </a>
+          <a href="#" class="rates-card">
+            <div class="rates-card__image-container">
+              <img class="rates-card__image" src="./images/rate.svg" alt="">
+              <span>х4</span>
+            </div>
+            <div class="rates-card__chairs-container">
+              <p>4 кресла</p>
+            </div>
+            <div class="rates-card__line"></div>
+            <div class="rates-card__price-container">
+              <span>6% УСН</span>
+              <p>18 000 ₽</p>
+            </div>
+            <div class="rates-card__dot"></div>
+            <div class="rates-card__price-container">
+              <span>15% УСН</span>
+              <p>24 000 ₽</p>
+            </div>
+            <div class="main-button orange-button rates-card__button">Подробнее</div>
+          </a>
+          <a href="#" class="rates-card">
+            <div class="rates-card__image-container">
+              <img class="rates-card__image" src="./images/rate.svg" alt="">
+              <span>х5</span>
+            </div>
+            <div class="rates-card__chairs-container">
+              <p>5 кресел</p>
+            </div>
+            <div class="rates-card__line"></div>
+            <div class="rates-card__price-container">
+              <span>6% УСН</span>
+              <p>18 000 ₽</p>
+            </div>
+            <div class="rates-card__dot"></div>
+            <div class="rates-card__price-container">
+              <span>15% УСН</span>
+              <p>24 000 ₽</p>
+            </div>
+            <div class="main-button orange-button rates-card__button">Подробнее</div>
+          </a>
+          <a href="#" class="rates-card rates-card_individual">
+            <div class="rates-card__image-container">
+              <img class="rates-card__image" src="./images/rate.svg" alt="">
+              <span>6+</span>
+            </div>
+            <div class="rates-card__chairs-container">
+              <p>6 кресел и более</p>
+            </div>
+            <div class="rates-card__line"></div>
+            <div class="rates-card__price-container">
+              <span>Рассчитывается</span>
+              <p>Индивидуально</p>
+            </div>
+            <div class="main-button orange-button rates-card__button">Подробнее</div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="back-call" class="back-call">
+      <div class="back-call__container">
+        <div class="back-call__text-container">
+          <span>Клиника работает меньше года?</span>
+          <p>Для Вас <span class="underline underline_turquoise">особенные условия!</span> <span
+              class="orange-text">Звоните!</span></p>
+        </div>
+        <div class="back-call__phone-container">
+          <p>+7 495 383-39-38</p>
+          <span>или</span>
+          <a class="main-button orange-button back-call__button" href="#">Заказать звонок</a>
+        </div>
+      </div>
+    </section>
+    <section id="rates-included" class="rates-included">
+      <div class="rates-included__container">
+        <div class="rates-included__content-container">
+          <h2>В каждый тариф включено</h2>
+          <ul class="check-list check-list_orange check-list_white-text">
+            <li>Бухгалтерский учёт</li>
+            <li>
+              Кадровый учёт
+              <p>в «бумажном» виде или ЭДО</p>
+            </li>
+            <li>
+              Казначейское сопровождение
+              с любым количеством платёжек
+            </li>
+            <li>
+              Расчёт зарплаты
+            </li>
+            <li>
+              Обработка первички: любое количество документов и операций
+            </li>
+            <li>
+              Ранний расчёт налогов и согласование суммы в бюджет
+            </li>
+            <li>
+              Неограниченное количество консультаций
+              <p>на любые вопросы по учёту и налогам отвечаем сразу</p>
+            </li>
+            <li>
+              1С в облаке с полным доступом
+              24/7 и возможностью выгрузки
+            </li>
+            <li>
+              Подготовка и сдача отчётности
+            </li>
+            <li>
+              Удобный для вас способ связи
+              <p>Телефон, почта, WhatsApp, Telegram, Viber, Zoom</p>
+            </li>
+            <li>
+              Общение напрямую с главбухом
+              <p>минуя аккаунт-менеджера</p>
+            </li>
+            <li>
+              Регулярный аудит налогов и учёта штатными аудиторами
+            </li>
+            <li>
+              Бесплатная доставка документов штатным курьером CBS group
+              <p>Для Москвы и МО</p>
+            </li>
+          </ul>
+          <div class="clip-item"></div>
+        </div>
+        <div class="entry">
+          <div class="entry__text-container">
+            <p class="entry__title">Бесплатный <span class="dark-green-text">Check Up</span></p>
+            <p class="entry__subtitle">Экспресс-анализ Вашей бухгалтерии <span
+                class="underline underline_soft-brown soft-brown-text">бесплатно</span></p>
+            <ul class="check-list check-list_orange">
+              <li>
+                Консультация главного бухгалтера
+              </li>
+              <li>
+                Комплексная диагностика
+              </li>
+              <li>
+                Отчет с оценкой и рекомендациями
+              </li>
+            </ul>
+            <div class="entry__phone-container">
+              <a class="main-button orange-button entry__button" href="#">Заказать звонок</a>
+              <span>+7 495 383-39-38</span>
+            </div>
+          </div>
+          <img class="entry__image" src="./images/entry.jpg" alt="">
+        </div>
+      </div>
+    </section>
+    <section id="specialists" class="specialists">
       <div class="specialists__container">
         <h2 class="section-title section-title_centered">Специалисты</h2>
         <div class="specialists__slider-container">
@@ -103,7 +367,7 @@
       </div>
       <div class="clip-item"></div>
     </section>
-    <section class="technologies">
+    <section id="technologies" class="technologies">
       <div class="technologies__container">
         <h2 class="section-title section-title_white section-title_centered">Технологии</h2>
         <div class="technologies__cards-container">
@@ -171,7 +435,6 @@
               <span>Настройка обмена документами (выписками, платёжками) по API с вашим банком</span>
             </div>
           </div>
-          <!-- 10 - 12 -->
           <div class="technologies-card">
             <img class="technologies-card__image" src="./images/technologies-10.svg" alt="">
             <div class="technologies-card__text-container">
@@ -191,14 +454,14 @@
             <img class="technologies-card__image" src="./images/technologies-12.svg" alt="">
             <div class="technologies-card__text-container">
               <p>Кадры</p>
-              <span>На ваш выбор: электронный 
+              <span>На ваш выбор: электронный
                 или бумажный кадровый документооборот</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="clients">
+    <section id="clients" class="clients">
       <div class="clients__container">
         <h2 class="section-title section-title_centered">Клиенты</h2>
         <div class="clients__cards-container">
@@ -217,7 +480,7 @@
         </div>
       </div>
     </section>
-    <section class="reviews">
+    <section id="reviews" class="reviews">
       <div class="reviews__container">
         <h2 class="section-title section-title_white section-title_centered">Отзывы</h2>
         <div class="reviews__main-container">
@@ -257,6 +520,109 @@
         </div>
       </div>
       <div class="clip-item"></div>
+    </section>
+    <section class="partners">
+      <div class="partners__container">
+        <div class="partners__content-container">
+          <h2>Те, кто нам доверяют</h2>
+          <div class="partners__cards-container">
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+            <a class="partners__card" href="#">
+              <img class="partners__card-image" src="./images/dantistoff.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="video" class="video">
+      <div class="video__container">
+        <h2 class="section-title section-title_white section-title_centered">Видео</h2>
+        <div class="video__slider-container">
+          <ul class="video__slider swiper-wrapper">
+            <a class="video__slide video-card swiper-slide" href="/doctor-video.mp4" data-fancybox="video-1">
+              <div class="video-card__image-container">
+                <div class="watch-video">
+                  <div class="watch-video__icon"></div>
+                  <span>Смотреть видео</span>
+                </div>
+                <img class="video-card__image" src="./images/video-card-1.jpg" alt="">
+              </div>
+              <div class="video-card__text-container">
+                <p>Бухгалтерское сопровождение фитнес центра</p>
+                <span>CBS group входит в ТОП-50 федерального рэнкинга Эксперт РА сразу по трём направлениям: учёт, аудит
+                  и консалтинг. В числе лучших
+                  с 2016 по 2022 год.
+                </span>
+              </div>
+            </a>
+            <a class="video__slide video-card swiper-slide" href="/doctor-video.mp4" data-fancybox="video-2">
+              <div class="video-card__image-container">
+                <div class="watch-video">
+                  <div class="watch-video__icon"></div>
+                  <span>Смотреть видео</span>
+                </div>
+                <img class="video-card__image" src="./images/video-card-2.jpg" alt="">
+              </div>
+              <div class="video-card__text-container">
+                <p>Аутсорсинг транспортной компании</p>
+                <span>CBS group входит в ТОП-50 федерального рэнкинга Эксперт РА сразу по трём направлениям: учёт, аудит
+                  и консалтинг. В числе лучших
+                  с 2016 по 2022 год.
+                </span>
+              </div>
+            </a>
+            <a class="video__slide video-card swiper-slide" href="/doctor-video.mp4" data-fancybox="video-3">
+              <div class="video-card__image-container">
+                <div class="watch-video">
+                  <div class="watch-video__icon"></div>
+                  <span>Смотреть видео</span>
+                </div>
+                <img class="video-card__image" src="./images/video-card-3.jpg" alt="">
+              </div>
+              <div class="video-card__text-container">
+                <p>Обслуживание автосервиса</p>
+                <span>CBS group входит в ТОП-50 федерального рэнкинга Эксперт РА сразу по трём направлениям: учёт, аудит
+                  и консалтинг. В числе лучших
+                  с 2016 по 2022 год.
+                </span>
+              </div>
+            </a>
+          </ul>
+          <div class="slider-pagination slider-pagination_active-orange video-pagination"></div>
+        </div>
+      </div>
     </section>
     <section id="map" class="map">
       <div class="map-panel__container">
@@ -303,7 +669,7 @@
               <p>Полежаевская</p>
             </div>
           </div>
-          <button class="main-button orange-button map-panel__button">Заказать звонок</button>
+          <a class="main-button orange-button map-panel__button" href="#">Заказать звонок</a>
         </div>
       </div>
       <div class="footer">
@@ -328,19 +694,19 @@
       </div>
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link" href="#">Начало</a>
+          <a class="nav-link" href="#quote">Начало</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Цены</a>
+          <a class="nav-link" href="#rates">Цены</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Решим проблемы</a>
+          <a class="nav-link" href="#rates-included">Решим проблемы</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">О компании</a>
+          <a class="nav-link" href="#specialists">О компании</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Контакты</a>
+          <a class="nav-link" href="#map">Контакты</a>
         </li>
       </ul>
       <a class="phone" href="tel:+74956350912">+7 (495) 635-09-12</a>
@@ -375,7 +741,7 @@
           <p>Полежаевская</p>
         </div>
       </div>
-      <button class="main-button orange-button mobile-menu__button">Оставить заявку</button>
+      <a class="main-button orange-button mobile-menu__button" href="#">Оставить заявку</a>
     </div>
   </div>
   <div class="menu-overlay"></div>
@@ -394,6 +760,9 @@
   <script src="./js/reviews-slider.js"></script>
   <script src="./js/lightbox.js"></script>
   <script src="./js/map.js"></script>
+  <script src="./js/video-progress.js"></script>
+  <script src="./js/video-slider.js"></script>
+  <script src="./js/scroll.js"></script>
 </body>
 
 </html>

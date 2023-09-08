@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", function () {
         })
         .then(() => {
           setTimeout(() => {
-            mailCopy.querySelector('.copy-text').textContent = 'Скопировать координаты';
+            mailCopy.querySelector('.copy-text').textContent = 'Скопировать e-mail';
           }, 3000)
         })
     })
