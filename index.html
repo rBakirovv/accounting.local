@@ -39,15 +39,17 @@
           <a class="nav-link" href="#map">Контакты</a>
         </li>
       </ul>
-      <a class="phone" href="tel:+74956350912">+7 (495) 635-09-12</a>
+      <a class="phone phone_header" href="tel:+74956350912">
+        <span class="whatsapp-btn"><i></i></span>
+        +7 (495) 635-09-12
+      </a>
       <button class="burger-icon"></button>
     </div>
   </header>
   <main>
     <section class="stb">
       <div class="stb__container">
-        <h1>
-          <span>Бухгалтерские</span><br>
+        <h1><span>Бухгалтерские</span><br>
           услуги <strong>для стоматологии</strong>
         </h1>
         <p>
@@ -63,8 +65,109 @@
           </span>
         </div>
         <div class="stb__buttons-container">
-          <a class="main-button orange-button" href="#">Перезвоните мне</a>
-          <a class="main-button white-button" href="#">Записаться</a>
+          <a class="main-button white-button stb__button" href="#">
+            <span class="whatsapp-btn"><i></i></span>
+            Написать в WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="express-calculator">
+      <div class="express-calculator__container">
+        <h2 class="section-title section-title_centered">Экспресс калькулятор</h2>
+        <div class="express-calculator__table-container">
+          <div class="express-calculator__table-column">
+            <div class="express-calculator__table-item">
+              <p>Ваша система налогообложения</p>
+              <form class="express-calculator__form" name="system">
+                <div class="express-calculator__radio">
+                  <input class="express-calculator__custom-radio" type="radio" id="system-1" name="system-item"
+                    value="УСН 6%" checked>
+                  <label for="system-1">УСН 6%</label>
+                </div>
+                <div class="express-calculator__radio">
+                  <input class="express-calculator__custom-radio" type="radio" id="system-2" name="system-item"
+                    value="УСН 15%">
+                  <label for="system-2">УСН 15%</label>
+                </div>
+                <div class="express-calculator__radio">
+                  <input class="express-calculator__custom-radio" type="radio" id="system-3" name="system-item"
+                    value="ОСН">
+                  <label for="system-3">ОСН</label>
+                </div>
+              </form>
+            </div>
+            <div class="express-calculator__table-item">
+              <p>Количество хозяйственных операций в месяц</p>
+              <div class="express-calculator__line express-calculator__slidecontainer">
+                <input type="range" min="0" max="200" value="20" class="express-calculator__slider"
+                  id="calculator-range">
+                <div class="express-calculator__rangeinner"></div>
+                <div class="express-calculator__thumb">
+                  <div class="express-calculator__range-info">20</div>
+                </div>
+                <div class="express-calculator__slider-line">
+                  <span class="slider-line__num slider-line__num-min" style="left:0%;">0</span>
+                  <span class="slider-line__num slider-line_active" style="left:10%;">20</span>
+                  <span class="slider-line__num" style="left:20%;">40</span>
+                  <span class="slider-line__num" style="left:30%;">60</span>
+                  <span class="slider-line__num" style="left:40%;">80</span>
+                  <span class="slider-line__num" style="left:50%;">100</span>
+                  <span class="slider-line__num" style="left:60%;">120</span>
+                  <span class="slider-line__num" style="left:70%;">140</span>
+                  <span class="slider-line__num" style="left:80%;">160</span>
+                  <span class="slider-line__num" style="left:90%;">180</span>
+                  <span class="slider-line__num slider-line__num-max" style="left:100%;">200</span>
+                </div>
+              </div>
+            </div>
+            <div class="express-calculator__table-item">
+              <p>Количество сотрудников</p>
+              <input class="express-calculator__input" type="number" id="employees" name="employees"
+                placeholder="Введите число" required="true" value="1">
+            </div>
+            <div class="express-calculator__table-item">
+              <p>У Вас есть спецпромокод?</p>
+              <form class="express-calculator__form" name="promocode">
+                <div class="express-calculator__radio">
+                  <input class="express-calculator__custom-radio" type="radio" id="promocode-no" name="promocode-item"
+                    value="false" checked>
+                  <label for="promocode-no">Нет</label>
+                </div>
+                <div class="express-calculator__radio">
+                  <input class="express-calculator__custom-radio" type="radio" id="promocode-yes" name="promocode-item"
+                    value="true">
+                  <label for="promocode-yes">Да</label>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="express-calculator__table-column">
+            <div class="express-calculator__result-container">
+              <div class="express-calculator__result-item">
+                <p>Тариф <strong>БАЗОВЫЙ</strong>, цена за месяц</p>
+                <div class="express-calculator__cost">~ <span class="basic-tariff">20800</span> руб.</div>
+              </div>
+              <div class="express-calculator__result-item">
+                <p>Стоимость <strong>НУЛЕВОЙ ОТЧЕТНОСТИ</strong>, цена за квартал (если вдруг нет деятельности)</p>
+                <div class="express-calculator__cost"><span class="basic-tariff">5400</span> руб.</div>
+              </div>
+            </div>
+            <div class="express-calculator__table-item">
+              <p>Получить коммерческое предложение</p>
+              <form class="express-calculator__form" id="calculator-callback" name="callback">
+                <input class="express-calculator__input" type="text" id="calculator-callback-email" name="email"
+                  placeholder="Адрес электронной почты" required="true">
+                <input class="express-calculator__input" type="text" id="calculator-callback-name" name="name"
+                  placeholder="Как к Вам обращаться" required="true">
+                <input class="express-calculator__input" type="text" id="calculator-callback-phone" name="phone"
+                  required="true">
+                <button class="main-button orange-button orange-button_white-bg express-calculator__button" type="submit">Отправить мне предложение и
+                  промокод</button>
+              </form>
+              <div class="express-calculator__personal-data">Cоглашаюсь на <a href="/">обработку персональных данных</a></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -89,15 +192,16 @@
           </div>
         </div>
         <a class="big-video video-progress" href="/doctor-video.mp4" data-fancybox="big-video">
-          <video class="big-video__video" autoplay="" muted="" playsinline="" loop="">
+          <video class="big-video__video" autoplay="" muted="" playsinline="" loop="" preload="metadata">
             <source src="https://dantistoff.ru/lp/video/shatilova.mp4" type="video/mp4">
           </video>
           <div class="watch-video">
             <div class="watch-video__icon"></div>
             <span>Смотреть видео</span>
           </div>
-          <span class="watch-video__comment">Хватиков В.А.
-            Коммерческий директор
+          <span class="watch-video__comment">
+            Хватиков В.А.
+            <br> Коммерческий директор
           </span>
           <progress class="video-progress-line" max="100" value="0">Progress</progress>
           <div class="clip-item"></div>
@@ -249,7 +353,7 @@
               class="orange-text">Звоните!</span></p>
         </div>
         <div class="back-call__phone-container">
-          <p>+7 495 383-39-38</p>
+          <a>+7 495 383-39-38</a>
           <span>или</span>
           <a class="main-button orange-button back-call__button" href="#">Заказать звонок</a>
         </div>
@@ -324,8 +428,8 @@
               </li>
             </ul>
             <div class="entry__phone-container">
-              <a class="main-button orange-button entry__button" href="#">Заказать звонок</a>
-              <span>+7 495 383-39-38</span>
+              <a class="main-button orange-button orange-button_white-bg entry__button" href="#">Заказать звонок</a>
+              <a>+7 495 383-39-38</a>
             </div>
           </div>
           <img class="entry__image" src="./images/entry.jpg" alt="">
@@ -627,9 +731,8 @@
     <section id="map" class="map">
       <div class="map-panel__container">
         <div class="map-panel__panel-container">
-          <div class="communications-container">
-            <span>Компания на станции</span>
-            <p><strong>Проспект Мира</strong></p>
+          <div class="communications-container communications-container_title">
+            <p><strong>Контакты</strong></p>
           </div>
           <div class="map-panel__line"></div>
           <div class="communications-container">
@@ -642,9 +745,6 @@
             -->
             <div class="coordinates coordinates-copy">
               Координаты <span class="copied-to-clipboard">55.732120.37.588526</span>
-              <div class="copy-tooltip">
-                <span class="copy-text">Скопировать координаты</span>
-              </div>
             </div>
           </div>
           <div class="map-panel__line"></div>
@@ -655,28 +755,26 @@
           <div class="map-panel__line"></div>
           <div class="communications-container">
             <span>E-mail</span>
-            <div class="mail-copy">info@konsaltingmail.ru
-              <div class="copy-tooltip">
-                <span class="copy-text">Скопировать e-mail</span>
-              </div>
-            </div>
+            <a>info@konsaltingmail.ru</a>
           </div>
           <div class="map-panel__line"></div>
           <div class="communications-container">
             <span>Станция метро</span>
             <div class="communications-container__metro">
-              <div class="metro-icon metro-icon_purple"></div>
+              <div class="metro-icon metro-icon_blue"></div>
               <p>Полежаевская</p>
             </div>
           </div>
-          <a class="main-button orange-button map-panel__button" href="#">Заказать звонок</a>
+          <a class="main-button orange-button orange-button_white-bg map-panel__button" href="#">Заказать звонок</a>
         </div>
       </div>
       <div class="footer">
         <div class="logo">
           <div class="logo-image"></div>
-          <p><span class="logo-text-first">Элитар</span><span class="logo-text-last"><span
-                class="logo-text-dash">-</span>Консалтинг</span></p>
+          <p>
+            <span class="logo-text-first">Элитар</span><span class="logo-text-last"><span
+                class="logo-text-dash">-</span>Консалтинг</span>
+          </p>
         </div>
         <p class="footer__rating">Компания c 20+ летней практикой из ТОП-100 федерального рейтинга</p>
       </div>
@@ -737,7 +835,7 @@
       <div class="communications-container">
         <span>Метро</span>
         <div class="communications-container__metro">
-          <div class="metro-icon metro-icon_purple"></div>
+          <div class="metro-icon metro-icon_blue"></div>
           <p>Полежаевская</p>
         </div>
       </div>
@@ -745,6 +843,9 @@
     </div>
   </div>
   <div class="menu-overlay"></div>
+  <a href="https://wa.me/1234567890?text=hello+123" target=”_blank” class="whatsapp-btn">
+    <i class="bi bi-whatsapp"></i>
+  </a>
   <!-- Слайдер -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <!-- Лайтбокс -->
@@ -763,6 +864,7 @@
   <script src="./js/video-progress.js"></script>
   <script src="./js/video-slider.js"></script>
   <script src="./js/scroll.js"></script>
+  <script src="./js/calculator.js"></script>
 </body>
 
 </html>

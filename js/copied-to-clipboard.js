@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
   const coordinatesElementsCopy = document.querySelectorAll(".coordinates-copy");
-  const mailElementsCopy = document.querySelectorAll(".mail-copy");
 
   coordinatesElementsCopy.forEach((coordinatesCopy) => {
     coordinatesCopy.addEventListener("click", () => {
@@ -11,20 +10,6 @@ window.addEventListener("DOMContentLoaded", function () {
         .then(() => {
           setTimeout(() => {
             coordinatesCopy.querySelector('.copy-text').textContent = 'Скопировать координаты';
-          }, 3000)
-        })
-    })
-  })
-
-  mailElementsCopy.forEach((mailCopy) => {
-    mailCopy.addEventListener("click", () => {
-      navigator.clipboard.writeText(mailCopy.textContent)
-        .then(() => {
-          mailCopy.querySelector('.copy-text').textContent = 'Скопировано в буфер обмена';
-        })
-        .then(() => {
-          setTimeout(() => {
-            mailCopy.querySelector('.copy-text').textContent = 'Скопировать e-mail';
           }, 3000)
         })
     })

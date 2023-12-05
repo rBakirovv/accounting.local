@@ -1,4 +1,5 @@
 /* Импорт шрифтов */
+
 @import url(./fonts.css);
 
 /* UI */
@@ -87,11 +88,12 @@ progress[value]::-moz-progress-bar {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
   font-family: 'Tilda Sans VF';
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 145%;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 145% !important;
   text-align: center;
   text-decoration: none;
   border-radius: 15px;
@@ -104,12 +106,18 @@ progress[value]::-moz-progress-bar {
 .orange-button {
   background-color: #F50;
   border: 1px solid #F50;
-  color: #fff;
+  color: #fff !important;
 }
 
 .orange-button:hover {
-  background-color: transparent;
-  color: #F50;
+  background-color: #FFF;
+  color: #F50 !important;
+  border: 1px solid transparent;
+}
+
+.orange-button_white-bg:hover {
+  background-color: #FC5E4D;
+  color: #FFF !important;
 }
 
 .orange-button:active {
@@ -117,20 +125,78 @@ progress[value]::-moz-progress-bar {
   border: 1px solid transparent;
 }
 
+.orange-button_white-bg:active {
+  color: #F50 !important;
+}
+
 .white-button {
   background-color: #fff;
   border: 1px solid #fff;
-  color: #F50;
+  color: #F50 !important;
 }
 
 .white-button:hover {
   background: transparent;
-  color: #fff;
+  color: #fff !important;
 }
 
 .white-button:active {
   background: rgba(255, 255, 255, 0.25);
   border: 1px solid transparent;
+}
+
+.main-button .whatsapp-btn {
+  position: relative;
+  right: initial;
+  bottom: initial;
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  animation: none;
+  box-shadow: none;
+}
+
+.main-button .whatsapp-btn i {
+  animation: none;
+}
+
+.main-button .whatsapp-btn i::before {
+  background-image: url(../images/wa.svg);
+  transition: all 0.4s ease-in-out;
+}
+
+.main-button .whatsapp-btn i::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  background-image: url(../images/wa-stb.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) translateY(50%);
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.main-button:hover .whatsapp-btn i::after {
+  opacity: 1;
+}
+
+.main-button:hover .whatsapp-btn i::before {
+  opacity: 0;
+}
+
+
+.orange-button_white-bg:hover .whatsapp-btn i::before {
+  opacity: 1;
+}
+
+.orange-button_white-bg:hover .whatsapp-btn i::after {
+  opacity: 0;
 }
 
 /* logo */
@@ -275,10 +341,21 @@ progress[value]::-moz-progress-bar {
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 500px) {
+  .section-title {
+    font-size: 34px;
+  }
+}
+
 /* communications-container */
 
 .communications-container {
   margin-top: 15px;
+}
+
+.communications-container a {
+  width: max-content;
+  margin: 0;
 }
 
 .communications-container__metro {
@@ -352,16 +429,6 @@ progress[value]::-moz-progress-bar {
   padding: 5px 10px 1px;
 }
 
-.mail-copy {
-  position: relative;
-  width: max-content;
-  cursor: pointer;
-}
-
-.mail-copy:hover .copy-tooltip {
-  opacity: 1;
-}
-
 /* coordinates */
 
 .coordinates {
@@ -407,8 +474,8 @@ progress[value]::-moz-progress-bar {
   background-repeat: no-repeat;
 }
 
-.metro-icon_purple {
-  background-image: url(../images/metro-icon-purple.svg);
+.metro-icon_blue {
+  background-image: url(../images/metro-icon-blue.svg);
 }
 
 /* menu-overlay */
@@ -611,7 +678,20 @@ progress[value]::-moz-progress-bar {
   font-weight: 600;
   line-height: 145%;
   color: #FFF;
+  white-space: nowrap;
   margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .watch-video {
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .watch-video__icon {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 /* check-list */
@@ -670,6 +750,78 @@ progress[value]::-moz-progress-bar {
 
 .check-list_orange li::after {
   background-image: url(../images/check-list-orange.svg);
+}
+
+/* wa */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  animation: breathe 2s ease-in-out infinite;
+}
+
+/*Estilos solo al icono whatsapp*/
+.whatsapp-btn i {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  animation: beat 2s ease-in-out infinite;
+  text-decoration: none;
+}
+
+.whatsapp-btn i::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  background-image: url(../images/wa.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) translateY(50%);
+  width: 24px;
+  height: 24px;
+}
+
+/*Estilos con animation contorno respirando*/
+@keyframes breathe {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/*Estilos de animacion del icono latiendo*/
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* header */
@@ -756,6 +908,60 @@ progress[value]::-moz-progress-bar {
   transition: all 0.4s ease-in-out;
 }
 
+.phone_header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.phone_header .whatsapp-btn {
+  position: relative;
+  right: initial;
+  bottom: initial;
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  animation: none;
+  box-shadow: none;
+}
+
+.phone_header .whatsapp-btn i {
+  width: 20px;
+  height: 20px;
+  animation: none;
+}
+
+.phone_header .whatsapp-btn i::before {
+  width: 20px;
+  height: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+.phone_header .whatsapp-btn i::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  background-image: url(../images/wa_active.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) translateY(50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.--scroll .phone_header .whatsapp-btn i::before {
+  opacity: 0;
+}
+
+.--scroll .phone_header .whatsapp-btn i::after {
+  opacity: 1;
+}
+
 .--scroll .phone {
   color: #453431;
 }
@@ -784,9 +990,14 @@ progress[value]::-moz-progress-bar {
 }
 
 @media screen and (max-width: 500px) {
+  .header__wrap {
+    padding: 0 17px;
+  }
+
   .phone {
     left: inherit;
-    right: 32px;
+    right: 72px;
+    transform: none;
   }
 }
 
@@ -877,7 +1088,15 @@ progress[value]::-moz-progress-bar {
 }
 
 .stb__buttons-container .main-button {
-  width: 250px;
+  width: auto;
+}
+
+.stb__button .whatsapp-btn i::before {
+  background-image: url(../images/wa-stb.svg);
+}
+
+.stb__button .whatsapp-btn i::after {
+  background-image: url(../images/wa.svg);
 }
 
 @media screen and (max-width: 1060px) {
@@ -933,12 +1152,21 @@ progress[value]::-moz-progress-bar {
 @media screen and (max-width: 500px) {
   .stb {
     background-image: url(../images/stb-mob.png);
-    background-size: 100% 510px;
+    background-size: 105% 510px;
     background-position: top 270px left 0;
   }
 
   .stb__container {
     padding: 50px 17px 35px;
+  }
+
+  .stb h1 span {
+    font-size: 44px;
+  }
+
+  .stb p {
+    font-size: 22px;
+    max-width: none;
   }
 
   .stb__statistics-container {
@@ -1188,6 +1416,14 @@ progress[value]::-moz-progress-bar {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .specialist__card {
+    max-width: 300px;
+    min-width: 280px;
+    width: 100% !important;
+  }
+}
+
 /* technologies */
 
 .technologies {
@@ -1236,7 +1472,7 @@ progress[value]::-moz-progress-bar {
   font-weight: 400;
   line-height: 122%;
   color: #9C8986;
-  margin: 0;
+  margin: 5px 0 0;
 }
 
 .technologies-card__image {
@@ -1267,8 +1503,10 @@ progress[value]::-moz-progress-bar {
   }
 
   .technologies__cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
-    grid-template-columns: repeat(1, 329px);
   }
 }
 
@@ -1522,14 +1760,26 @@ progress[value]::-moz-progress-bar {
 
 .map-panel__panel-container .communications-container p,
 .map-panel__panel-container .communications-container a {
-  font-size: 26px;
-  font-weight: 400;
+  font-size: 25px;
+  font-weight: 500;
   line-height: 135%;
   color: #171717;
+  margin: 0;
+}
+
+.map-panel__panel-container .communications-container_title p {
+  font-size: 32px;
+  line-height: 120%;
 }
 
 .map-panel__panel-container .communications-container__metro {
   align-items: center;
+  width: max-content;
+  margin: 0;
+}
+
+.map-panel__panel-container .communications-container__metro p {
+  margin: 0;
 }
 
 .map-panel__button {
@@ -1538,6 +1788,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .map-panel__coordinates-container {
+  width: max-content;
   margin-top: 10px;
 }
 
@@ -1576,6 +1827,7 @@ progress[value]::-moz-progress-bar {
   .map-panel__panel-container .communications-container p,
   .map-panel__panel-container .communications-container a {
     text-align: center;
+    margin: 0 auto;
   }
 
   .map-panel__coordinates-container {
@@ -1598,7 +1850,7 @@ progress[value]::-moz-progress-bar {
 @media screen and (max-width: 500px) {
   .map-panel__container {
     width: calc(100% - 40px);
-    bottom: 150px;
+    bottom: 160px;
   }
 
   .map-panel__panel-container {
@@ -1613,8 +1865,20 @@ progress[value]::-moz-progress-bar {
     line-height: 135%;
   }
 
+  .map-panel__panel-container .communications-container_title p {
+    font-size: 26px;
+  }
+
   .map-panel__line {
     margin: 10px 0;
+  }
+
+  .map-panel__panel-container .communications-container__metro {
+    margin: 0 auto;
+  }
+
+  .communications-container__metro .metro-icon {
+    transform: none;
   }
 
   .ymaps-2-1-79-map {
@@ -1743,13 +2007,18 @@ progress[value]::-moz-progress-bar {
   }
 
   .profit__container {
-    padding-top: 60px;
+    padding: 60px 17px 20px;
   }
 }
 
 @media screen and (max-width: 700px) {
   .profit__cards-container {
-    grid-template-columns: repeat(1, 320px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 326px;
+    min-width: 280px;
+    margin: 30px auto 0;
   }
 
   .profit__card {
@@ -1877,20 +2146,20 @@ progress[value]::-moz-progress-bar {
 }
 
 .rates-card__button {
-  color: #F50;
-  background-color: #FFECEA;
+  color: #F50 !important;
+  background-color: #FFECEA !important;
   border: none !important;
   margin-top: 15px;
 }
 
 .rates-card:hover .rates-card__button {
-  color: #FFF;
-  background-color: #F50;
+  color: #FFF !important;
+  background-color: #F50 !important;
 }
 
 .rates-card__chairs-container p {
   font-family: 'Tilda Sans VF';
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -2053,7 +2322,7 @@ progress[value]::-moz-progress-bar {
   width: 300px;
 }
 
-.back-call__phone-container p {
+.back-call__phone-container a {
   font-family: 'Tilda Sans VF';
   font-size: 42px;
   font-style: normal;
@@ -2061,6 +2330,12 @@ progress[value]::-moz-progress-bar {
   line-height: 120%;
   color: #FFF;
   margin: 0;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.back-call__phone-container a:hover {
+  color: #F50;
 }
 
 .back-call__phone-container span {
@@ -2074,12 +2349,6 @@ progress[value]::-moz-progress-bar {
 }
 
 @media screen and (max-width: 1360px) {
-  /*
-  .back-call__container::after {
-    display: none;
-  }
-  */
-
   .back-call__phone-container {
     margin-right: 0;
   }
@@ -2118,10 +2387,16 @@ progress[value]::-moz-progress-bar {
     color: #FFF;
     text-align: center;
   }
+
+  .back-call__phone-container a {
+    font-size: 36px;
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .back-call__container {
+    gap: 10px;
     padding: 40px 16px;
   }
 
@@ -2135,8 +2410,22 @@ progress[value]::-moz-progress-bar {
     line-height: 150%;
   }
 
+  .back-call__phone-container a {
+    margin-top: 10px;
+  }
+
+  .back-call__phone-container {
+    gap: 0;
+  }
+
   .back-call__phone-container p {
     font-size: 32px;
+  }
+
+  .back-call__button {
+    max-width: 300px;
+    min-width: 280px;
+    width: 100%;
   }
 }
 
@@ -2267,6 +2556,11 @@ progress[value]::-moz-progress-bar {
   box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.15);
   border-radius: 25px;
   text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.big-video:hover {
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.65);
 }
 
 .big-video::after {
@@ -2301,6 +2595,10 @@ progress[value]::-moz-progress-bar {
   transform: translateX(-50%) translateY(50%);
 }
 
+.big-video:hover .watch-video {
+  background-color: #FC5E4D;
+}
+
 .watch-video__comment {
   position: absolute;
   z-index: 2;
@@ -2313,7 +2611,7 @@ progress[value]::-moz-progress-bar {
   font-weight: 700;
   line-height: 120%;
   text-align: center;
-  max-width: 160px;
+  width: 100%;
   color: #FFF;
 }
 
@@ -2343,8 +2641,20 @@ progress[value]::-moz-progress-bar {
       margin-top: 20px;
     }
 
+    .big-video::after {
+      height: 40%;
+    }
+
     .big-video .watch-video span {
       font-size: 10px;
+    }
+
+    .big-video .watch-video__comment {
+      bottom: 25px;
+    }
+
+    .big-video .video-progress-line {
+      bottom: 10px;
     }
   }
 }
@@ -2395,7 +2705,7 @@ progress[value]::-moz-progress-bar {
   width: 100%;
 }
 
-.entry__phone-container span {
+.entry__phone-container a {
   display: inherit;
   font-family: 'Tilda Sans VF';
   font-size: 32px;
@@ -2403,6 +2713,12 @@ progress[value]::-moz-progress-bar {
   font-weight: 700;
   line-height: 120%;
   color: #171717;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.entry__phone-container a:hover {
+  color: #F50;
 }
 
 @media screen and (max-width: 1060px) {
@@ -2458,6 +2774,10 @@ progress[value]::-moz-progress-bar {
     border-radius: 0 !important;
     margin-top: 0;
   }
+
+  .entry__phone-container a {
+    font-size: 28px;
+  }
 }
 
 /* rates-included */
@@ -2502,7 +2822,7 @@ progress[value]::-moz-progress-bar {
 
 .rates-included__content-container .check-list {
   flex-wrap: wrap;
-  max-height: 350px;
+  max-height: 310px;
   margin: 45px auto 0;
 }
 
@@ -2535,7 +2855,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .rates-included .entry__button {
-  max-width: 242px;
+  max-width: 280px;
 }
 
 @media screen and (max-width: 1360px) {
@@ -2567,7 +2887,7 @@ progress[value]::-moz-progress-bar {
 
   .rates-included__content-container .check-list {
     display: grid;
-    grid-template-columns: 308px 308px;
+    grid-template-columns: 308px 308px 308px;
     max-height: none;
   }
 
@@ -2575,6 +2895,12 @@ progress[value]::-moz-progress-bar {
     position: relative;
     bottom: inherit;
     margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .rates-included__content-container .check-list {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -2734,6 +3060,18 @@ progress[value]::-moz-progress-bar {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .video-card {
+    max-width: 300px;
+    min-width: 280px;
+    width: 100% !important;
+  }
+
+  .video-card__image-container .watch-video {
+    width: max-content;
+  }
+}
+
 /* partners */
 
 .partners {
@@ -2848,4 +3186,383 @@ progress[value]::-moz-progress-bar {
   .partners__card {
     min-width: 250px;
   }
+}
+
+/* express-calculator */
+
+.express-calculator {
+  position: relative;
+  background-color: #FFF;
+  border-radius: 25px;
+}
+
+.express-calculator__container {
+  max-width: 1060px;
+  border-radius: 25px;
+  margin: 0 auto;
+  padding: 120px 0;
+}
+
+.express-calculator__table-container {
+  display: flex;
+  margin: 30px auto 0;
+}
+
+.express-calculator__table-column {
+  width: 50%;
+}
+
+.express-calculator__table-item {
+  position: relative;
+  box-sizing: border-box;
+  word-break: break-word;
+  padding: 16px 24px;
+  margin: 0;
+  transition: transform .3s ease;
+}
+
+.express-calculator__table-column:last-of-type .express-calculator__table-item:last-of-type {
+  margin-top: 15px;
+}
+
+.express-calculator__form {
+  margin-top: 15px;
+}
+
+.express-calculator__table-item p {
+  font-family: 'Tilda Sans VF';
+  font-size: 18px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.express-calculator__table-column:last-of-type .express-calculator__table-item:last-of-type p {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.express-calculator__radio {
+  padding: 7px 0;
+}
+
+/* для элемента input c type="radio" */
+.express-calculator__custom-radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.express-calculator__custom-radio::before {
+  transition: all 0.2s ease-in-out;
+}
+
+/* для элемента label связанного с .custom-radio */
+.express-calculator__custom-radio+label {
+  font-family: 'Tilda Sans VF';
+  font-size: 14px;
+  line-height: 1.15;
+  color: #616161;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.express-calculator__custom-radio+label::before {
+  transition: all 0.2s ease-in-out;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.express-calculator__custom-radio+label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на радио */
+.express-calculator__custom-radio:not(:disabled):not(:checked)+label:hover::before {
+  border-color: #b3d7ff;
+}
+
+/* стили для активной радиокнопки (при нажатии на неё) */
+.express-calculator__custom-radio:not(:disabled):active+label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.express-calculator__custom-radio:focus:not(:checked)+label::before {
+  border-color: #80bdff;
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.express-calculator__custom-radio:checked+label::before {
+  border-color: #00ADB5;
+  background-color: #00ADB5;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  background-size: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.express-calculator__custom-radio:disabled+label::before {
+  background-color: #e9ecef;
+}
+
+.express-calculator__input {
+  font-family: 'Tilda Sans VF';
+  font-size: 16px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: #000;
+  background-color: #FFF;
+  border: 2px solid #00ADB5;
+  width: 100%;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 15px;
+}
+
+.express-calculator__input:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.express-calculator__result-container {
+  background-color: #00ADB5;
+  border-radius: 6px;
+}
+
+.express-calculator__result-item {
+  text-align: right;
+  padding: 12px 24px;
+}
+
+.express-calculator__result-item p {
+  font-family: 'Tilda Sans VF';
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, .9);
+  margin: 0;
+}
+
+.express-calculator__cost {
+  font-family: 'Tilda Sans VF';
+  font-size: 21px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.express-calculator__line {
+  position: relative;
+  text-align: left;
+  height: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.express-calculator__rangeinner {
+  position: absolute;
+  right: -1px;
+  width: 90%;
+  bottom: 6px;
+  display: block;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  height: 2px;
+  pointer-events: none;
+}
+
+.express-calculator__slidecontainer {
+  width: 100%;
+  /* Width of the outside container */
+}
+
+/* The slider itself */
+.express-calculator__slider {
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  appearance: none;
+  width: 100%;
+  /* Full-width */
+  height: 2px;
+  /* Specified height */
+  background: #00ADB5;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  cursor: pointer;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.express-calculator__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: -4px;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.express-calculator__slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: -4px;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.express-calculator__slider_left::-webkit-slider-thumb {
+  margin: -4px;
+}
+
+.express-calculator__slider_right::-webkit-slider-thumb {
+  margin: 4px;
+}
+
+.express-calculator__slider_left::-webkit-slider-thumb {
+  margin: -4px;
+}
+
+.express-calculator__slider_right::-webkit-slider-thumb {
+  margin: 4px;
+}
+
+.express-calculator__thumb {
+  position: absolute;
+  bottom: -1px;
+  left: 10%;
+  z-index: 2;
+  width: 15px;
+  height: 15px;
+  background: #00ADB5;
+  border-radius: 50%;
+  pointer-events: none;
+  margin: -8px;
+  transform: translateY(-8px);
+}
+
+.express-calculator__slider-line {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+}
+
+.express-calculator__slider-line span {
+  position: absolute;
+  top: 0;
+  font-family: 'Tilda Sans VF';
+  font-size: 11px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #616161;
+  white-space: nowrap;
+  text-align: left;
+  transform: translateX(-50%);
+  padding-top: 10px;
+  pointer-events: none;
+}
+
+.express-calculator__slider-line span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50%);
+  transform: translateX(-50%);
+  display: block;
+  height: 8px;
+  width: 2px;
+  background-color: #e0e0e0;
+}
+
+.express-calculator__slider-line .slider-line__num-min::before {
+  background-color: #00ADB5;
+}
+
+.express-calculator__slider-line .slider-line_active::before {
+  background-color: #00ADB5;
+}
+
+.express-calculator__range-info {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Tilda Sans VF';
+  font-size: 16px;
+  line-height: 1.15;
+  font-weight: 400;
+  text-align: center;
+  background-color: #FFF;
+  white-space: nowrap;
+  border-radius: 8px;
+  width: 45px;
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  transition-delay: .3s;
+}
+
+.express-calculator__slidecontainer:hover .express-calculator__range-info {
+  opacity: 1;
+  visibility: visible;
+}
+
+.express-calculator__range-info::before {
+  content: '';
+  position: absolute;
+  border: 5px solid transparent;
+  border-top: 5px solid #FFF;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+}
+
+.express-calculator__button {
+  margin: 15px auto 0;
+}
+
+#calculator-callback {
+  margin-top: 0;
+}
+
+.express-calculator__personal-data {
+  font-family: 'Tilda Sans VF';
+  font-size: 12px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: #000;
+  width: max-content;
+  margin: 10px auto 0;
+}
+
+.express-calculator__personal-data a {
+  color: #405acc;
+  transition: all 0.2s ease-in-out;
+}
+
+.express-calculator__personal-data a:hover {
+  opacity: 0.7;
 }
