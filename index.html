@@ -156,16 +156,23 @@
             <div class="express-calculator__table-item">
               <p>Получить коммерческое предложение</p>
               <form class="express-calculator__form" id="calculator-callback" name="callback">
-                <input class="express-calculator__input" type="text" id="calculator-callback-email" name="email"
-                  placeholder="Адрес электронной почты" required="true">
-                <input class="express-calculator__input" type="text" id="calculator-callback-name" name="name"
-                  placeholder="Как к Вам обращаться" required="true">
-                <input class="express-calculator__input" type="text" id="calculator-callback-phone" name="phone"
-                  required="true">
-                <button class="main-button orange-button orange-button_white-bg express-calculator__button" type="submit">Отправить мне предложение и
-                  промокод</button>
+                <div class="input-validated">
+                  <input class="express-calculator__input email-input" type="text" id="calculator-callback-email"
+                    name="email" placeholder="Адрес электронной почты">
+                </div>
+                <div class="input-validated">
+                  <input class="express-calculator__input name-input" type="text" id="calculator-callback-name"
+                    name="name" placeholder="Как к Вам обращаться">
+                </div>
+                <div class="input-validated">
+                  <input class="express-calculator__input phone-input" type="text" id="calculator-callback-phone"
+                    name="phone" placeholder="+7">
+                </div>
+                <button class="main-button orange-button orange-button_white-bg express-calculator__button"
+                  type="submit">Отправить</button>
               </form>
-              <div class="express-calculator__personal-data">Cоглашаюсь на <a href="/">обработку персональных данных</a></div>
+              <div class="express-calculator__personal-data">Cоглашаюсь на <a href="/">обработку персональных данных</a>
+              </div>
             </div>
           </div>
         </div>
@@ -846,6 +853,23 @@
   <a href="https://wa.me/1234567890?text=hello+123" target=”_blank” class="whatsapp-btn">
     <i class="bi bi-whatsapp"></i>
   </a>
+  <!-- preloader -->
+  <div class="preloader">
+    <div class="preloader__container">
+      <span class="preloader__round"></span>
+    </div>
+  </div>
+  <!-- success -->
+  <div class="modal success-modal">
+    <div class="success-modal__container">
+      <div class="modal-close modal-close_white"></div>
+      <p>Спасибо!</p>
+      <span>Заявка отправлена.<br> Наши менеджеры свяжутся с вами в самое ближайшее время!</span>
+    </div>
+  </div>
+  <div>
+
+  </div>
   <!-- Слайдер -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <!-- Лайтбокс -->
