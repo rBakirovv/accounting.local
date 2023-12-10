@@ -46,6 +46,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
     if (e.target.id === "employees") {
       basicTariff.textContent = (parseInt(calculatorSection.querySelector("#tax-system").querySelector(".--active").dataset.ratio) * sliderInput.value) + (Math.abs(e.target.value) * 500);
+
+      if (e.target.value > 0) {
+        employeesNumber.classList.remove("input-invalid");
+      }
     }
   }
 
@@ -281,7 +285,7 @@ window.addEventListener("DOMContentLoaded", function () {
   function handleCalculatorSubmit(e) {
     e.preventDefault();
 
-    if (calculatorCallbackEmail.classList.contains("input-valid") && calculatorCallbackName.classList.contains("input-valid") && calculatorCallbackPhone.classList.contains("input-valid")) {
+    if (calculatorCallbackEmail.classList.contains("input-valid") && calculatorCallbackName.classList.contains("input-valid") && calculatorCallbackPhone.classList.contains("input-valid") && employeesNumber.value > 0) {
 
       showPreloader();
 
@@ -310,6 +314,7 @@ window.addEventListener("DOMContentLoaded", function () {
         calculatorCallbackEmail.classList.remove("input-valid");
         calculatorCallbackName.classList.remove("input-valid");
         calculatorCallbackPhone.classList.remove("input-valid");
+        employeesNumber.classList.remove("input-valid");
       }
 
       xhr.onprogress = () => {
@@ -350,6 +355,10 @@ window.addEventListener("DOMContentLoaded", function () {
     if (calculatorCallbackPhone.classList.contains("input-valid")) {
       calculatorCallbackPhone.classList.remove("input-invalid");
       calculatorCallbackPhone.classList.add("input-valid");
+    }
+
+    if (employeesNumber.value <= 0) {
+      employeesNumber.classList.add("input-invalid");
     }
   }
 
