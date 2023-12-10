@@ -15,11 +15,55 @@ window.addEventListener("DOMContentLoaded", function () {
   const calculatorCallbackPhone = calculatorSection.querySelector("#calculator-callback-phone");
 
   // modal 
-
   const successModal = document.querySelector(".success-modal");
-  const successModalClose = successModal.querySelector(".modal-close");
-
   const preloader = document.querySelector(".preloader");
+
+  // calculator
+  const taxSystems = calculatorSection.querySelector("#tax-system").querySelectorAll("input");
+  const zeroReporting = calculatorSection.querySelector(".zero-reporting");
+  const basicTariff = calculatorSection.querySelector(".basic-tariff");
+  const employeesNumber = calculatorSection.querySelector("#employees");
+
+  function calculatorHandler(e) {
+    if (e.target.value === "УСН 6%") {
+
+      zeroReporting.textContent = "5000";
+    }
+
+    if (e.target.value === "УСН 15%") {
+
+      zeroReporting.textContent = "7500";
+    }
+
+    if (e.target.value === "ОСН") {
+
+      zeroReporting.textContent = "9000";
+    }
+
+    if (e.target.id === "calculator-range") {
+      basicTariff.textContent = (parseInt(calculatorSection.querySelector("#tax-system").querySelector(".--active").dataset.ratio) * e.target.value) + (Math.abs(employeesNumber.value) * 500);
+    }
+
+    if (e.target.id === "employees") {
+      basicTariff.textContent = (parseInt(calculatorSection.querySelector("#tax-system").querySelector(".--active").dataset.ratio) * sliderInput.value) + (Math.abs(e.target.value) * 500);
+    }
+  }
+
+  function taxSystemClickHandler(e) {
+    taxSystems.forEach((item) => {
+      item.classList.remove("--active");
+    })
+
+    e.target.classList.add("--active");
+
+    basicTariff.textContent = (parseInt(e.target.dataset.ratio) * sliderInput.value) + (Math.abs(employeesNumber.value) * 500);
+  }
+
+  function employeesHandler(e) {
+    if (e.target.value < 0) {
+      employeesNumber.value = Math.abs(e.target.value);
+    }
+  }
 
   function showPreloader() {
     preloader.classList.add("preloader_active");
@@ -31,6 +75,30 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function openSuccessModal() {
     successModal.classList.add("modal_opened");
+
+    basicTariff.textContent = "6000";
+    zeroReporting.textContent = "5000";
+
+    employeesNumber.value = 1;
+
+    taxSystems.forEach((item) => {
+      item.classList.remove("--active");
+    })
+
+    taxSystems[0].classList.add("--active");
+
+    sliderInput.value = 20;
+    rangeInfo.textContent = `20`;
+    rangeThumb.style.left = `10%`;
+    sliderRangeinner.style.width = `90%`;
+
+    sliderNumbers.forEach((item) => {
+      if (parseInt(item.textContent) <= sliderInput.value) {
+        item.classList.add("slider-line_active");
+      } else {
+        item.classList.remove("slider-line_active");
+      }
+    })
   }
 
   function closeSuccessModal() {
@@ -66,9 +134,20 @@ window.addEventListener("DOMContentLoaded", function () {
     })
   }
 
-  sliderInput.addEventListener("change", sliderInputChangeHandler);
-  sliderInput.addEventListener("input", sliderInputChangeHandler);
-  sliderInput.addEventListener("click", sliderInputChangeHandler);
+  sliderInput.addEventListener("change", (e) => {
+    sliderInputChangeHandler();
+    calculatorHandler(e);
+  });
+
+  sliderInput.addEventListener("input", (e) => {
+    sliderInputChangeHandler();
+    calculatorHandler(e);
+  });
+
+  sliderInput.addEventListener("click", (e) => {
+    sliderInputChangeHandler();
+    calculatorHandler(e);
+  });
 
   // Валидация 
 
@@ -277,5 +356,17 @@ window.addEventListener("DOMContentLoaded", function () {
     if (e.target.classList.contains("modal-close")) {
       closeSuccessModal();
     }
+  })
+
+  taxSystems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      calculatorHandler(e);
+      taxSystemClickHandler(e);
+    })
+  })
+
+  employeesNumber.addEventListener("input", (e) => {
+    calculatorHandler(e);
+    employeesHandler(e);
   })
 })

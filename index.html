@@ -79,20 +79,20 @@
           <div class="express-calculator__table-column">
             <div class="express-calculator__table-item">
               <p>Ваша система налогообложения</p>
-              <form class="express-calculator__form" name="system">
+              <form class="express-calculator__form" id="tax-system">
                 <div class="express-calculator__radio">
-                  <input class="express-calculator__custom-radio" type="radio" id="system-1" name="system-item"
-                    value="УСН 6%" checked>
+                  <input class="express-calculator__custom-radio --active" type="radio" id="system-1" name="system-item"
+                    value="УСН 6%" data-ratio="275" checked>
                   <label for="system-1">УСН 6%</label>
                 </div>
                 <div class="express-calculator__radio">
                   <input class="express-calculator__custom-radio" type="radio" id="system-2" name="system-item"
-                    value="УСН 15%">
+                    value="УСН 15%" data-ratio="300">
                   <label for="system-2">УСН 15%</label>
                 </div>
                 <div class="express-calculator__radio">
                   <input class="express-calculator__custom-radio" type="radio" id="system-3" name="system-item"
-                    value="ОСН">
+                    value="ОСН" data-ratio="350">
                   <label for="system-3">ОСН</label>
                 </div>
               </form>
@@ -126,6 +126,7 @@
               <input class="express-calculator__input" type="number" id="employees" name="employees"
                 placeholder="Введите число" required="true" value="1">
             </div>
+            <!--
             <div class="express-calculator__table-item">
               <p>У Вас есть спецпромокод?</p>
               <form class="express-calculator__form" name="promocode">
@@ -141,16 +142,17 @@
                 </div>
               </form>
             </div>
+            -->
           </div>
           <div class="express-calculator__table-column">
             <div class="express-calculator__result-container">
               <div class="express-calculator__result-item">
                 <p>Тариф <strong>БАЗОВЫЙ</strong>, цена за месяц</p>
-                <div class="express-calculator__cost">~ <span class="basic-tariff">20800</span> руб.</div>
+                <div class="express-calculator__cost">~ <span class="basic-tariff">6000</span> руб.</div>
               </div>
               <div class="express-calculator__result-item">
                 <p>Стоимость <strong>НУЛЕВОЙ ОТЧЕТНОСТИ</strong>, цена за квартал (если вдруг нет деятельности)</p>
-                <div class="express-calculator__cost"><span class="basic-tariff">5400</span> руб.</div>
+                <div class="express-calculator__cost"><span class="basic-tariff zero-reporting">5000</span> руб.</div>
               </div>
             </div>
             <div class="express-calculator__table-item">
