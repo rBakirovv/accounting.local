@@ -83,9 +83,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
     taxSystems.forEach((item) => {
       item.classList.remove("--active");
+      item.checked = false;
     })
 
-    taxSystems[0].classList.add("--active");
+    calculatorSection.querySelector("#tax-system").querySelector("#system-1").classList.add("--active");
+    calculatorSection.querySelector("#tax-system").querySelector("#system-1").checked = true;
 
     sliderInput.value = 20;
     rangeInfo.textContent = `20`;
@@ -283,37 +285,41 @@ window.addEventListener("DOMContentLoaded", function () {
 
       showPreloader();
 
-      const url = 'https://app.dantistoff.ru/wh/newlead/';
+      let data = `email=${calculatorCallbackEmail.value}&name=${calculatorCallbackName.value}&phone=${calculatorCallbackPhone.value}&tax-system=${parseInt(calculatorSection.querySelector("#tax-system").querySelector(".--active").dataset.ratio)}&transactions-number=${sliderInput.value}&employees-number=${employeesNumber.value}`;
 
-      const data = new URLSearchParams(new FormData());
+      const xhr = new XMLHttpRequest();
 
-      data.append('url', window.location.href);
+      xhr.open('POST', '../ajax.php', true);
+      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=UTF-8');
 
-      data.append('email', calculatorCallbackEmail.value);
-      data.append('name', calculatorCallbackName.value);
-      data.append('phone', calculatorCallbackPhone.value);
+      xhr.send(data);
 
-      const result = fetch(url, {
-          method: 'post',
-          body: data,
-        })
-        .then(() => {
-          hidePreloader();
-          openSuccessModal();
-        })
-        .then(() => {
-          calculatorCallbackEmail.value = "";
-          calculatorCallbackName.value = "";
-          calculatorCallbackPhone.value = "+7";
+      xhr.onload = () => {
+        if (xhr.status >= 400) {
+          console.log(xhr.status);
+          return;
+        };
 
-          calculatorCallbackEmail.classList.remove("input-valid");
-          calculatorCallbackName.classList.remove("input-valid");
-          calculatorCallbackPhone.classList.remove("input-valid");
-        }).catch(() => {
-          hidePreloader();
-        })
+        hidePreloader();
+        openSuccessModal();
 
-      return
+        calculatorCallbackEmail.value = "";
+        calculatorCallbackName.value = "";
+        calculatorCallbackPhone.value = "+7";
+
+        calculatorCallbackEmail.classList.remove("input-valid");
+        calculatorCallbackName.classList.remove("input-valid");
+        calculatorCallbackPhone.classList.remove("input-valid");
+      }
+
+      xhr.onprogress = () => {
+        showPreloader();
+      }
+
+      xhr.onerror = () => {
+        hidePreloader();
+        console.log(xhr.response)
+      }
     }
 
     if (!calculatorCallbackEmail.classList.contains("input-valid")) {

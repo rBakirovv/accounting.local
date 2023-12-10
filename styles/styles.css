@@ -3539,7 +3539,7 @@ progress[value]::-moz-progress-bar {
 }
 
 /* стили для активной радиокнопки (при нажатии на неё) */
-.express-calculator__custom-radio:not(:disabled):active+label::before {
+.express-calculator__custom-radio.--active:not(:disabled)+label::before {
   background-color: #b3d7ff;
   border-color: #b3d7ff;
 }
@@ -3550,7 +3550,7 @@ progress[value]::-moz-progress-bar {
 }
 
 /* стили для радиокнопки, находящейся в состоянии checked */
-.express-calculator__custom-radio:checked+label::before {
+.express-calculator__custom-radio.--active:checked+label::before {
   border-color: #00ADB5;
   background-color: #00ADB5;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
@@ -3658,6 +3658,10 @@ progress[value]::-moz-progress-bar {
 .express-calculator__slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
+  background-color: transparent;
+  box-shadow: none;
+  filter: none;
+  border: none;
   margin: -4px;
   width: 20px;
   height: 15px;
@@ -3668,6 +3672,10 @@ progress[value]::-moz-progress-bar {
 .express-calculator__slider::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
+  background-color: transparent;
+  box-shadow: none;
+  filter: none;
+  border: none;
   margin: -4px;
   width: 20px;
   height: 15px;
